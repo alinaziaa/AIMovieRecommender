@@ -1,51 +1,50 @@
-# 🎬 AI Movie Recommender Android Application
+🎬 1. Project Overview & Introduction
+Project Name: AI Movie Recommender (Android Application)
 
-## 📌 Project Overview
-The **AI Movie Recommender** is a native Android application designed to provide movie recommendations based on content similarity and genre matching. Developed using **Java** and **XML** in **Android Studio**, the app utilizes an on-device content-based filtering logic to analyze target movie features and deliver relevant suggestions through a modern, card-based user interface.
+Description: A smart, content-based movie recommendation Android application developed in Java using Android Studio. The application is designed to help users discover similar movies based on genre and tag-matching algorithms, complete with user authentication and dynamic dataset management.
 
----
+👩‍🎓 2. Student Information (For Submission)
+Student Name: Alina Zia
 
-## 👤 Student Identification
-* **Student Name:** Alina Zia
-* **Roll Number:** 242201087
-* **Program:** Bachelor of Science in Computer Science (BSCS)
-* **Semester / Section:** 5th Semester, Section B
+Roll Number: 242201087
 
----
+Semester & Section: 5th Semester, Section B
 
-## ⚙️ Core Architecture & Working Logic
+Institution: Dr. A. Q. Khan Institute of Computer Sciences & Information Technology (KICSIT)
 
-### 1. Content-Based Recommendation Algorithm
-The application employs a tag/genre matching engine to evaluate similarity scores between movies:
-* **Dataset Initialization:** The system maintains a mapped dataset containing movie titles associated with specific feature vectors (e.g., `Sci-Fi`, `Action`, `AI`, `Space`).
-* **Feature Comparison:** When a user inputs a target movie title, the engine extracts its key feature tags and compares them against all other entries in the dataset.
-* **Similarity Scoring:** Scores are calculated based on the count of matching feature tags. Movies with positive match scores are formatted and ranked into a dynamic list.
+⚙️ 3. Core Features Implemented
+User Authentication & Session Management (LoginActivity):
 
-### 2. User Interface & Experience (UI/UX)
-* **CardView & Dark Theme:** Styled with a clean, dark-mode dashboard interface using rounded `CardView` elements for input and output display.
-* **Dynamic Listing (RecyclerView):** Recommended results are passed to a `RecyclerView` managed by a custom `MovieAdapter`, ensuring smooth scrolling and structured card rendering for each movie item.
-* **Validation & Toast Alerts:** Built-in error handling manages empty search queries or unlisted titles with user-friendly Toast notifications.
+Features a secure login screen requiring email and password input.
 
----
+Validates inputs to ensure fields are not empty and the email format is correct before granting access.
 
-## 📁 Repository Directory & File Descriptions
+Content-Based Recommendation Algorithm (MainActivity):
 
-* **`.idea/`**: Internal workspace configurations and IDE settings managed by Android Studio[cite: 2, 3].
-* **`app/`**: Primary module containing all application source code[cite: 2, 3]:
-  * `MainActivity.java`: Contains core activity lifecycle logic, similarity engine, and RecyclerView adapter implementation.
-  * `activity_main.xml`: Defines the layout structure, input fields, cards, and list container.
-  * `item_movie.xml`: XML layout template for individual recommendation cards.
-  * `AndroidManifest.xml`: System-level declaration file for activity registers and application configurations.
-* **`gradle/`**: Holds the Gradle Wrapper files required to execute builds without external installation[cite: 2, 3].
-* **`build.gradle`**: Project-level dependency configuration and Android SDK settings[cite: 2, 3].
-* **`gradle.properties`**: Global build properties and JVM parameter allocations[cite: 2, 3].
-* **`settings.gradle`**: Defines overall project name and includes app modules[cite: 2, 3].
-* **`README.md`**: Official documentation file detailing project features, technical architecture, and author details.
+Utilizes a built-in dataset structure (HashMap) containing movies and their respective tags/genres (e.g., Sci-Fi, Action, Thriller).
 
----
+Calculates a tag-matching score when a user searches for a movie and displays relevant recommendations dynamically using a RecyclerView.
 
-## 🛠️ Tech Stack & Prerequisites
-* **Language:** Java[cite: 2, 3]
-* **UI Layout:** XML
-* **IDE:** Android Studio[cite: 2, 3]
-* **Target Environment:** Android (Tested on Android physical devices)
+Dynamic Add Movie / Task Feature:
+
+Allows users to input new movie titles and custom tags/genres directly at runtime, expanding the active dataset instantly.
+
+Logout Functionality:
+
+Includes a secure logout option on the dashboard that terminates the current session and safely redirects the user back to the login screen.
+
+Modern User Interface (UI):
+
+Styled with a sleek dark theme, utilizing CardViews, RecyclerViews, and structured linear layouts for a responsive experience.
+
+📁 4. Project File Structure & Architecture
+AndroidManifest.xml: Configures application components and sets LoginActivity as the primary launcher activity (MAIN and LAUNCHER intent filters).
+
+activity_login.xml & LoginActivity.java: Defines the login user interface layout and handles authentication validation logic.
+
+activity_main.xml & MainActivity.java: Houses the main dashboard layout, search bar, add movie form, logout handler, and recommendation engine logic.
+
+item_movie.xml & MovieAdapter: Manages individual movie card designs and binds dataset items efficiently to the RecyclerView.
+
+🔗 5. GitHub Repository Link
+Repository URL: [https://github.com/alinaziaa/AIMovieRecommender]
